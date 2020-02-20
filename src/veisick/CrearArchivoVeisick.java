@@ -19,8 +19,9 @@ public class CrearArchivoVeisick
     {
         if(file.exists())
         {
-            write.write("");
+            write = new BufferedWriter(new FileWriter(file));
             write.write(texto);
+            write.close();
         }
         else
         {

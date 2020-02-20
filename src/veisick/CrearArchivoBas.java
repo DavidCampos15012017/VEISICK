@@ -24,15 +24,16 @@ public class CrearArchivoBas
     public void crearArchivoPcBasic(String texto) throws IOException {
 
         if (file.exists()) {
-            write.write("");
+            write = new BufferedWriter(new FileWriter(file));
             write.write(texto);
+            write.close();
         } else {
             write = new BufferedWriter(new FileWriter(file));
             write.write(texto);
             write.close();
         }
         
-        String cmd = "C:\\Program Files (x86)\\PC-BASIC-1.2\\pcbasic.exe gwbasic Ecuaciones2doGrado.bas ";
+        String cmd ="C:\\Program Files (x86)\\PC-BASIC-1.2\\pcbasic.exe C:\\Ejemplo.bas ";
         Runtime run = Runtime.getRuntime();
         Process proc = run.exec(cmd);
 

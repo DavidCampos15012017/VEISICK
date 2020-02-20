@@ -43,6 +43,7 @@ public class VEISICK {
                 line = line.replaceFirst(" = ","=").replaceFirst(" - ", "-");
                 line=line.replace(" ^ ","^").replace(" * ", "*").replace(" / ", "/");
                 line = line.replace(" ( ", "(").replace(" ) ", ")").replace(" <= ", "<=").replace(" + ", "+");
+                line= line.replace(" A","A").replace(" B","B").replace(" C","C");
                 textoBas +=line+"\n";
                 texto +=contador+++" "+line+"\n";
                 System.out.println(line);
