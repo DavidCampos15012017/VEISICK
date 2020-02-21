@@ -17,8 +17,8 @@ import java.io.IOException;
 public class CrearArchivoBas 
 {
 
-    String ruta = "C:/Ejemplo.bas";
-    File file = new File(ruta);
+    //String ruta = "C:/Ejemplo.bas";
+    File file = new File( new File ("Ejemplo.bas").getAbsolutePath ());// new File(ruta);
     BufferedWriter write;
 
     public void crearArchivoPcBasic(String texto) throws IOException {
@@ -33,7 +33,7 @@ public class CrearArchivoBas
             write.close();
         }
         
-        String cmd ="C:\\Program Files (x86)\\PC-BASIC-1.2\\pcbasic.exe C:\\Ejemplo.bas ";
+        String cmd ="C:\\Program Files (x86)\\PC-BASIC-1.2\\pcbasic.exe " + new File ("Ejemplo.bas").getAbsolutePath ();
         Runtime run = Runtime.getRuntime();
         Process proc = run.exec(cmd);
 

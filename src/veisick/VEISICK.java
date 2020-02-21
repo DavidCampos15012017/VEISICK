@@ -26,7 +26,8 @@ public class VEISICK {
         // TODO code application logic here
         Formatter formato = new Formatter();
         try {
-            Scanner leerArchivo = new Scanner(new File("c:/Ecuaciones2doGrado.veisick"));
+            // Carga el archivo:
+            Scanner leerArchivo = new Scanner( new File(new File ("Ecuaciones2doGrado.veisick").getAbsolutePath ())); //new File("c:/Ecuaciones2doGrado.veisick"));
 
             String[] lista;
             String palabra = "";
@@ -46,12 +47,13 @@ public class VEISICK {
                 line= line.replace(" A","A").replace(" B","B").replace(" C","C");
                 textoBas +=line+"\n";
                 texto +=contador+++" "+line+"\n";
-                System.out.println(line);
+                //System.out.println(line);
 
             }
             
             
             /**/
+            System.out.println (new File ("Ecuaciones2doGrado.veisick").getAbsolutePath ());
             crear.crearArchivo(texto);
             pcBasic.crearArchivoPcBasic(textoBas);
 

@@ -12,8 +12,8 @@ import java.io.IOException;
  */
 public class CrearArchivoVeisick 
 {
-    String ruta = "C:/Ecuaciones2doGrado-errores.txt";
-    File file = new File(ruta);
+    //String ruta = "C:/Ecuaciones2doGrado-errores.txt";
+    File file = new File( new File ("Ecuaciones2doGrado-errores.txt").getAbsolutePath ()); //new File(ruta);
     BufferedWriter write;
     public void crearArchivo(String texto) throws IOException
     {
