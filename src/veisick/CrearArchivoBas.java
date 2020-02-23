@@ -18,7 +18,7 @@ public class CrearArchivoBas
 {
 
     //String ruta = "C:/Ejemplo.bas";
-    File file = new File( new File ("Ejemplo.bas").getAbsolutePath ());// new File(ruta);
+    File file = new File( new File ("Ejemplo.bas").getAbsolutePath ());// Obtengo la ruta donde está el archivo .bas que es donde está el compilado
     BufferedWriter write;
 
     public void crearArchivoPcBasic(String texto) throws IOException {

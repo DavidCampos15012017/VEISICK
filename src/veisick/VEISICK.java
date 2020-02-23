@@ -39,21 +39,18 @@ public class VEISICK {
             while (leerArchivo.hasNextLine())
             {
                 String line = leerArchivo.nextLine();
-                line = line.replaceFirst("PRINT\\s{0,}", "PRINT");
-                line = line.replaceFirst("INPUT\\s{0,}", "INPUT");
+                line = line.replaceFirst("\\s{2,}"," ");
+                line = line.replaceFirst("PRINT\\s{1,}", "PRINT");
+                line = line.replaceFirst("INPUT\\s{1,}", "INPUT");
                 line = line.replaceFirst(" = ","=").replaceFirst(" - ", "-");
                 line=line.replace(" ^ ","^").replace(" * ", "*").replace(" / ", "/");
-                line = line.replace(" ( ", "(").replace(" ) ", ")").replace(" + ", "+").replace(" <= ", "<=").replace("200","D=200");
-                line= line.replace(" A","A").replace(" B","B").replace(" C","C");
+                line = line.replace(" ( ", "(").replace(" ) ", ")").replace("B + ", "B+").replace(" <= ", "<=");
+                line= line.replace(", A",",A").replace(", B",",B").replace(", C",",C");
                 textoBas +=line+"\n";
                 texto +=contador+++" "+line+"\n";
                 //System.out.println(line);
 
             }
-            
-            
-            /**/
-            System.out.println (new File ("Ecuaciones2doGrado.veisick").getAbsolutePath ());
             crear.crearArchivo(texto);
             pcBasic.crearArchivoPcBasic(textoBas);
 
