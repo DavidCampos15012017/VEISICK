@@ -15,6 +15,7 @@ public class Identificadores<token, lexema, Regex> {
     public  final String token;
     public  final String lexema;
     public  final String Regex;
+    //public  final String mensaje;
     
     public  Identificadores(String token, String lexema, String Regex)
     {
@@ -34,5 +35,6 @@ public class Identificadores<token, lexema, Regex> {
     public String getRegex() {
         return Regex;
     }
+  
     
 }

@@ -21,7 +21,7 @@ public class AnalizadorLexico {
 
                 objBas.crearArchivoPcBasic(texto);
                 esValido = true;
-                //System.out.println(texto);
+               // System.out.println(texto);
             } 
             else {
                 // Si no lo es, lo manda al archivo de error.
