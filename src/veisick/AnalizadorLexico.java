@@ -29,7 +29,7 @@ public class AnalizadorLexico {
                 Pattern pt = Pattern.compile("(^[\\d]+)");
                 Matcher mc = pt.matcher(texto);
                 if (mc.find()) {
-                    mensaje = "Error: En la línea " + mc.group(1) + ".";
+                    mensaje = "Error: En la línea " + mc.group(1) + ": El comando ("+texto+") no es válido.";
                 }
                 archivodeError.crearArchivo(mensaje);
                 esValido = false;
