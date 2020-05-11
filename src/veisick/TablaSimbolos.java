@@ -21,8 +21,7 @@ public class TablaSimbolos {
         Tabla.add(new Identificadores("PRINT", "PRINT", "^[\\d]+\\s+(PRINT)\\s*(\\\"([A-Za-z0-9-+=\\s]+)\\\"\\;*\\s*([A-Z0-9]+)*\\s*)?$"));
         Tabla.add(new Identificadores("INPUT", "INPUT", "^[\\d\\s]+(INPUT)\\s\".*([A-Za-z0-9-]+).*"));
         Tabla.add(new Identificadores("REM", "REM", "[\\d]+\\s+(REM)\\s+.*")); // Valida REM
-        //                                                   18 LET M=12
-        Tabla.add(new Identificadores("LET", "LET", "[\\d]+\\s+(LET)*\\s*([A-Z0-9]{1,20})\\s*\\=\\s*\\\"*([\\(\\)A-Za-z0-9-+\\/^\\*\\s]*)\\\"*"));// LET
+        Tabla.add(new Identificadores("LET", "LET", "[\\d]+\\s+(LET)*\\s*((([A-Z])([0-9])*){1,20})\\s*\\=\\s*\\\"*([\\(\\)A-Za-z0-9-+\\/^\\*\\s]*)\\\"*"));// LET
         Tabla.add(new Identificadores("IF", "IF", "([\\d])*\\s*(IF)\\s*\\((\\s*(|\\+|\\-)[A-Z0-9]\\s*(<|>|<=|=>|=)\\s*[A-Z0-9]\\s*)*(\\|\\|)*(\\s*(|\\+|\\-)[A-Z0-9]\\s*(<|>|<=|=>)\\s*[A-Z0-9]\\s*)*\\)\\s*(THEN)\\s+([A-z0-9])+\\s*")); // Valida IF
         Tabla.add(new Identificadores("CLS", "CLS", "^[\\d\\s]+(CLS)\\s*")); // Valida CLS
         Tabla.add(new Identificadores("STRING", "STRING", "^[\\d\\s]+([A-Za-z0-9-]+)\\$=\"([A-Za-z0-9-]+)\"")); // Valida Tipo de dato String
@@ -39,8 +38,6 @@ public class TablaSimbolos {
 
     public boolean isSimbolo(String texto) {
         boolean estado = false;
-        Datos objDatos = new Datos();
-        String mensaje="";
         for (Identificadores id : Tabla) {
             if (texto.matches(id.getRegex())) {
                 estado = true;

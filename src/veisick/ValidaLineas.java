@@ -23,12 +23,12 @@ import java.util.regex.Pattern;
 public class ValidaLineas {
     //String ruta = "C:/Ecuaciones2doGrado-errores.txt";
 
-    public boolean validaLineas() throws FileNotFoundException {
+    public boolean validaLineas(String nombre) throws FileNotFoundException {
         boolean valor = false;
         int nuevaLinea = 0;
         int lineaAnterior = 0;
         // Lee el archivo .veisick
-        Scanner leerArchivo = new Scanner(new File(new File("Ecuaciones2doGrado.veisick").getAbsolutePath()));
+        Scanner leerArchivo = new Scanner(new File(new File(nombre).getAbsolutePath()));
         String reglon = "";
         while (leerArchivo.hasNextLine()) {
             
